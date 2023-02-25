@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaf6f6;
+}
+
+hr {
+    border: 1px dashed #888888;
+    margin-bottom: 25px;
+    width: 50%;
+}
+
+h1 {
+    color: #66bfbf;
+}
+
+h3 {
+    color: #66bfbf;
+}
