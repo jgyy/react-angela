@@ -1,6 +1,6 @@
-const bmiCalculator = (weight: number, height: number): number => {
+const bmiCalculator2 = (weight: number, height: number): number => {
     return weight / (height * height);
 };
 
-const bmi = bmiCalculator(65, 1.8);
+const bmi = bmiCalculator2(65, 1.8);
 console.log(bmi);
