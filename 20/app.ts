@@ -1,4 +1,4 @@
-const app = require('express')();
+const app20 = require('express')();
 const expressStatic = require('express').static;
 const bodyParserUrlEncoded = require('body-parser').urlencoded;
 const httpsGet = require('https').get;
@@ -7,14 +7,14 @@ const dotenvConfig = require('dotenv').config;
 
 dotenvConfig({ path: pathJoin(__dirname, '.env') });
 
-app.use(expressStatic(pathJoin(__dirname, 'public')));
-app.use(bodyParserUrlEncoded({ extended: true }));
+app20.use(expressStatic(pathJoin(__dirname, 'public')));
+app20.use(bodyParserUrlEncoded({ extended: true }));
 
-app.get('/', (_: any, res: any) => {
+app20.get('/', (_: any, res: any) => {
     res.sendFile(pathJoin(__dirname, 'signup.html'));
 });
 
-app.post('/', (req: any, res: any) => {
+app20.post('/', (req: any, res: any) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const email = req.body.email;
@@ -22,11 +22,11 @@ app.post('/', (req: any, res: any) => {
     res.send('Success!');
 });
 
-app.post('/failure', (_: any, res: any) => {
+app20.post('/failure', (_: any, res: any) => {
     res.redirect('/');
 });
 
-app.get('/weather', (_: any, res: any) => {
+app20.get('/weather', (_: any, res: any) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${process.env.API_KEY}`;
     console.log(url);
     httpsGet(url, (response: any) => {
@@ -45,6 +45,6 @@ app.get('/weather', (_: any, res: any) => {
     });
 });
 
-app.listen(3000, () => {
+app20.listen(3000, () => {
     console.log('Server is up and listening on port 3000!');
 });
