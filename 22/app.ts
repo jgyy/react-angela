@@ -1,6 +1,6 @@
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
+import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
 const dates = require(__dirname + '/date.ts');
 
 const app = express();
@@ -43,7 +43,7 @@ app.post('/work', (req: any, res: any) => {
 app.get('/about', (_: any, res: any) => {
     res.render(ejsFile("about.ejs"));
 });
-
+    
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
 });
