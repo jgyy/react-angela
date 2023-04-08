@@ -19,6 +19,8 @@ client.connect().then(() => {
     findDocuments(db, () => {
         client.close();
     });
+}).catch(err => {
+    console.log(err);
 });
 
 const insertDocuments = function(db: Db, callback: any) {
@@ -45,6 +47,8 @@ const insertDocuments = function(db: Db, callback: any) {
         assert.equal(3, result.insertedCount);
         console.log("Inserted 3 documents into the collection");
         callback(result);
+    }).catch(err => {
+        console.log(err);
     });
 }
 
@@ -56,5 +60,7 @@ const findDocuments = function(db: Db, callback: any) {
         console.log("Found the following records");
         console.log(docs);
         callback(docs);
+    }).catch(err => {
+        console.log(err);
     });
 }
